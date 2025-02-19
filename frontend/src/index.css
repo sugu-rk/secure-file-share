@@ -1,0 +1,439 @@
+/* src/index.css (add these styles at the bottom or modify as needed) */
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: green;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* Important for width to include padding and border */
+}
+
+form button[type="submit"] {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.password-strength {
+  font-size: 0.9em;
+  margin-top: 3px;
+}
+
+.password-strength.Too-weak { color: red; }
+.password-strength.Medium { color: orange; }
+.password-strength.Strong { color: green; }
+
+
+/* src/index.css (add these styles) */
+.password-input-group {
+  position: relative; /* To position the icon */
+  display: flex; /* To align input and icon horizontally */
+}
+
+.password-input-group input {
+  flex-grow: 1; /* Input takes remaining space */
+  padding-right: 30px; /* Make space for the icon */
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center icon */
+  cursor: pointer;
+  opacity: 0.7; /* Slightly less prominent icon */
+}
+
+.password-toggle-icon:hover {
+  opacity: 1;
+}
+
+
+/* src/index.css (add these styles) */
+.mfa-setup-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+.mfa-setup-dialog {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.mfa-setup-dialog h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.qrcode-container {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.secret-key-container {
+  margin-bottom: 15px;
+}
+
+.mfa-setup-dialog input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dialog-buttons button {
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.dialog-buttons button:first-child {
+  background-color: #007bff; /* Verify MFA button */
+  color: white;
+}
+
+.dialog-buttons button:first-child:hover {
+  background-color: #0056b3;
+}
+
+.dialog-buttons button:last-child {
+  background-color: #ccc; /* Skip for Now button */
+  color: black;
+}
+
+.dialog-buttons button:last-child:hover {
+  background-color: #bbb;
+}
+
+/* src/index.css or AuthStyles.css */
+.mfa-verification-section {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.mfa-verification-section h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* src/index.css (add these styles) */
+.progress-bar-container {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar-container progress {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+file-list-container ul li button {
+    padding: 5px 10px;
+    cursor: pointer;
+   }
+
+
+   .share-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+  }
+  
+  .share-dialog {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    text-align: left; /* Align text in the dialog to the left */
+  }
+  
+  .share-dialog h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center; /* Center the title */
+  }
+  
+  .share-dialog label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px; /* Add some space above labels */
+  }
+  
+  .share-dialog input[type="text"],
+  .share-dialog select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for width to include padding and border */
+  }
+  
+  
+  .share-dialog .dialog-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px; /* Add space above buttons */
+  }
+  
+  .share-dialog .dialog-buttons button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .share-dialog .dialog-buttons button[type="submit"] { /* Style "Share" button */
+    background-color: #007bff; /* Primary button color */
+    color: white;
+  }
+  
+  .share-dialog .dialog-buttons button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  
+  .share-dialog .dialog-buttons button[type="button"] { /* Style "Close" button */
+    background-color: #ccc; /* Secondary button color */
+    color: black;
+  }
+  
+  .share-dialog .dialog-buttons button[type="button"]:hover {
+    background-color: #bbb; /* Darker shade on hover */
+  }
+
+
+  .share-link-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+  }
+  
+  .share-link-dialog {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 450px; /* Slightly wider than ShareFileDialog */
+    max-width: 90%;
+    text-align: left;
+  }
+  
+  .share-link-dialog h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .share-link-dialog label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+  
+  .share-link-dialog select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  
+  .share-link-dialog .dialog-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .share-link-dialog .dialog-buttons button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .share-link-dialog .dialog-buttons button[type="submit"] { /* Style "Generate Link" button */
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .share-link-dialog .dialog-buttons button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .share-link-dialog .dialog-buttons button[type="button"] { /* Style "Close" button */
+    background-color: #ccc;
+    color: black;
+  }
+  
+  .share-link-dialog .dialog-buttons button[type="button"]:hover {
+    background-color: #bbb;
+  }
+  
+  
+  .share-link-dialog .shareable-link-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center; /* Center content in the link section */
+  }
+  
+  .share-link-dialog .shareable-link-section p {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .share-link-dialog .shareable-link-section .link-display {
+    margin-bottom: 10px;
+    word-wrap: break-word; /* For long links */
+  }
+  
+  .share-link-dialog .shareable-link-section .link-display a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .share-link-dialog .shareable-link-section .link-display a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  
+  .share-link-dialog .shareable-link-section button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    background-color: #28a745; /* Green color for "Copy Link" button */
+    color: white;
+    cursor: pointer;
+  }
+  
+  .share-link-dialog .shareable-link-section button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+
+  .shared-files-to-me-container,
+.shared-files-by-me-container {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.shared-files-to-me-container h3,
+.shared-files-by-me-container h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.shared-files-to-me-container ul,
+.shared-files-by-me-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.shared-files-by-me-container ul > li {
+    margin-bottom: 10px; /* Space between each main file item */
+}
+
+.shared-files-by-me-container ul > li > ul {
+    margin-top: 5px; /* Indent shared with users list */
+    padding-left: 20px;
+}
+
+.shared-files-by-me-container ul > li > ul > li {
+    font-size: 0.9em; /* Smaller font for shared user details */
+    color: #555;
+}
