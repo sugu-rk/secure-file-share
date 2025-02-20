@@ -1,22 +1,15 @@
 version: '3'
 
 services:
-  backend:
+  web:
     build: ./backend
-    container_name: django_backend
+    container_name: django-app
+    volumes:
+      - ./backend:/app
     ports:
       - "8000:8000"
     environment:
-      - DJANGO_SUPERUSER_USERNAME=admin
-      - DJANGO_SUPERUSER_PASSWORD=admin
-      - DJANGO_SUPERUSER_EMAIL=test.admin@gmail.com
-    volumes:
-      - ./backend:/app
-      - ./backend/db.sqlite3:/app/db.sqlite3 
-    command: >
-      sh -c "python manage.py migrate &&
-             python manage.py createsuperuser --noinput &&
-             python manage.py runserver 0.0.0.0:8000"
+      - PYTHONUNBUFFERED=1
 
   frontend:
     build: ./frontend
@@ -24,7 +17,7 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - backend
+      - web
     volumes:
       - ./frontend:/app
       - /app/node_modules  # Keeps node_modules inside container
